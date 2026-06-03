@@ -1,0 +1,310 @@
+/* --- CSS RESET & VARIABLE DESIGN STYLES (Based on Style Guide & watermarked_img_5280239909045048997.png) --- */
+:root {
+    --cyan: #49E2E9;
+    --yellow: #FFC72C;
+    --magenta: #D462AD;
+    --white: #FFFFFF;
+    --black: #000000;
+    --body-font: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+/* Global Container Utilities */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3, .logo {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section-title-center {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+/* --- HEADER / NAVIGATION --- */
+header {
+    background-color: var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    color: var(--cyan);
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--cyan);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    background-color: var(--cyan);
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.main-title {
+    font-size: 5.5rem;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 0px var(--black);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--black);
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+}
+
+.fringe-badge {
+    background-color: var(--black);
+    color: var(--yellow);
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* --- BUTTONS --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--magenta);
+    color: var(--white);
+    padding: 15px 40px;
+    text-decoration: none;
+    font-family: 'Impact', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border: 3px solid var(--black);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 4px 4px 0px var(--black);
+    background-color: #be4f96;
+}
+
+/* --- ABOUT & GALLERY SECTION --- */
+.about-section {
+    background-color: #f9f9f9;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 180px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--black);
+    position: relative;
+    overflow: hidden;
+}
+
+.img-placeholder {
+    font-weight: bold;
+    color: var(--white);
+    font-size: 0.9rem;
+    z-index: 2;
+    text-shadow: 1px 1px 2px var(--black);
+}
+
+/* --- CAST & CARDS --- */
+.cast-section {
+    background-color: var(--white);
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background: #fdfdfd;
+    border: 3px solid var(--black);
+    padding: 30px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 6px 6px 0px var(--black);
+}
+
+.card.transparent {
+    box-shadow: none;
+    background: transparent;
+    border: 2px dashed var(--magenta);
+}
+
+.avatar-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+    border: 3px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-txt {
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 1px 1px 2px var(--black);
+}
+
+.role {
+    font-weight: 700;
+    color: var(--magenta);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 0.85rem;
+    color: #444;
+}
+
+/* --- MOODBOARD FILTERS (From Style Guide Color Treatment) --- */
+.cyan-filter { background-color: var(--cyan); }
+.yellow-filter { background-color: var(--yellow); }
+.magenta-filter { background-color: var(--magenta); }
+.dark-filter { background-color: var(--black); }
+
+/* --- INTEGRATIONS --- */
+.integrations-section {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.integration-card {
+    border: 3px solid var(--white);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.integration-card h2 {
+    color: var(--cyan);
+}
+
+.integration-card p {
+    margin-bottom: 30px;
+}
+
+.btn-gofundme, .btn-bonfire {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-family: 'Impact', sans-serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--white);
+}
+
+.btn-gofundme {
+    background-color: var(--magenta); /* GoFundMe Brand Green */
+    color: var(--white);
+}
+
+.btn-bonfire {
+    background-color: var(--magenta); /* Bonfire Brand Orange/Red */
+    color: var(--white);
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 30px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    border-top: 1px solid #222;
+}
